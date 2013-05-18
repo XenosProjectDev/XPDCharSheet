@@ -1,0 +1,4 @@
+name: XPDCharSheet
+version: 0.0.1
+main: xpd.charsheet.XPDCharSheet
+authors: [Greg Sheer @SheerAwesomeness, Zak Jones @QwisoDev]
