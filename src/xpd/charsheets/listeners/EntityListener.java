@@ -1,4 +1,4 @@
-package xpd.charsheet.listeners;
+package xpd.charsheets.listeners;
 
 public class EntityListener {
 
