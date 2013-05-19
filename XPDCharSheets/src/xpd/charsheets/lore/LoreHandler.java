@@ -7,7 +7,7 @@ import org.bukkit.inventory.PlayerInventory;
 
 public class LoreHandler{
 
-	public void fromArmor(Player player){
+	public void getFromArmor(Player player){
 		
 		PlayerInventory i = player.getInventory();
 		

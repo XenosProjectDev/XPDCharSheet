@@ -15,11 +15,14 @@ public class PlayerListener implements Listener {
 		
 		this.plugin = a;
 		
+		}
+	
+	@EventHandler(priority=EventPriority.LOWEST)
+	public void onPlayerInteract(PlayerInteractEvent event){
+		
 	}
 	
 	@EventHandler(priority=EventPriority.LOWEST)
-	  public void onPlayerInteract(PlayerInteractEvent event){
-		
-	}
+	public
 	
 }
