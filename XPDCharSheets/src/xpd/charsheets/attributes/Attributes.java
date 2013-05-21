@@ -6,64 +6,60 @@ import java.util.regex.Pattern;
 
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.inventory.PlayerInventory;
 
 public class Attributes {
-	@EventHandler
-	public void onEntityDamageByEntityEvent(EntityDamageByEntityEvent damage) {
+	
+	public void matchArmor(Entity damager){
 
-		Entity damager = damage.getDamager();
-		if (damager instanceof Player) {
+			Player player = ((Player) damager);
+			
+			final PlayerInventory i = player.getInventory();
+			
 			String all = null;
 			String all1 = null;
 			String all2 = null;
 			String all3 = null;
 			String all4 = null;
-			Player player = ((Player) damager);
-			final PlayerInventory i = player.getInventory();
+			
 			List<String> boots = null;
 			List<String> leggings = null;
 			List<String> chestplate = null;
 			List<String> helmet = null;
-			try {
-				boots = i.getBoots().getItemMeta().getLore();
-			} catch (Exception e) {
-			}
-			try {
-				leggings = i.getLeggings().getItemMeta().getLore();
-			} catch (Exception e) {
-			}
-			try {
-				chestplate = i.getChestplate().getItemMeta().getLore();
-			} catch (Exception e) {
-			}
-			try {
-				helmet = i.getHelmet().getItemMeta().getLore();
-			} catch (Exception e) {
-			}
+			
+			try {boots = i.getBoots().getItemMeta().getLore();}
+				catch (Exception e) {}
+			try {leggings = i.getLeggings().getItemMeta().getLore();}
+				catch (Exception e) {}
+			try {chestplate = i.getChestplate().getItemMeta().getLore();}
+				catch (Exception e) {}
+			try {helmet = i.getHelmet().getItemMeta().getLore();}
+				catch (Exception e) {}
+			
 			if (boots != null) {
 				all1 = boots.toString();
-			} else {
-				all1 = "";
 			}
+				else {
+					all1 = "";
+				}
+			
 			if (leggings != null) {
 				all2 = leggings.toString();
-
-			} else {
-				all2 = "";
 			}
+				else {
+					all2 = "";
+				}
+			
 			if (chestplate != null) {
-				all3 = chestplate.toString();
-			} else {
-				all3 = "";
-			}
+				all3 = chestplate.toString();}
+				else {
+					all3 = "";}
+			
 			if (helmet != null) {
-				all4 = helmet.toString();
-			} else {
-				all4 = "";
-			}
+				all4 = helmet.toString();}
+				else {
+					all4 = "";}
+			
 			all = all1 + all2 + all3 + all4;
 			while (all.contains("§")) {
 				int index = all.indexOf("§");
@@ -71,12 +67,14 @@ public class Attributes {
 				String sub2 = all.substring(0, index);
 				all = sub2 + sub1;
 			}
-			int finaltotal6 = 0;
+			
 			int finaltotal1 = 0;
 			int finaltotal2 = 0;
 			int finaltotal3 = 0;
 			int finaltotal4 = 0;
 			int finaltotal5 = 0;
+			int finaltotal6 = 0;
+			
 			while (all.contains("+")) {
 				int index = all.indexOf("+");
 				String sub1 = all.substring(index + 1);
@@ -145,4 +143,4 @@ public class Attributes {
 			int Health = finaltotal6;
 			player.sendMessage("Health: " + Health);
 
-}}}
+}}
