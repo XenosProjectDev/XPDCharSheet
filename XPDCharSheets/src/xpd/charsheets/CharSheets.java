@@ -1,20 +1,21 @@
 package xpd.charsheets;
 
-import org.bukkit.Bukkit;
-import org.bukkit.entity.HumanEntity;
+import org.bukkit.Server;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import xpd.charsheets.listeners.EntityListener;
+import xpd.charsheets.listeners.DamageListener;
 import xpd.charsheets.listeners.InventoryListener;
 import xpd.charsheets.listeners.PlayerListener;
 
 public class CharSheets extends JavaPlugin {
 	
-	//private Sheet charSheet;
-	//private Attributes attribute;
-	//private Effects effect;
+	public static CharSheets plugin;
+	public static Server server;
 	
 	public void onEnable() {
+		
+		plugin = this;
+		server = getServer();
 		
 		registerListeners();
 		
@@ -22,24 +23,11 @@ public class CharSheets extends JavaPlugin {
 		
 	private void registerListeners(){
 			
-		Bukkit.getPluginManager().registerEvents(new PlayerListener(this), this);
-		Bukkit.getPluginManager().registerEvents(new InventoryListener(this), this);
-		Bukkit.getPluginManager().registerEvents(new EntityListener(this), this);
+		server.getPluginManager().registerEvents(new PlayerListener(this), this);
+		server.getPluginManager().registerEvents(new InventoryListener(this), this);
+		server.getPluginManager().registerEvents(new DamageListener(this), this);
 			
 	}
-
-	public CharSheets getSheet(HumanEntity player) {
-		// TODO getSheet(player)
-		return null;
-	}
-	
-	public CharSheets getEffects(HumanEntity player) {
-		// TODO getEffects(player)
-		return null;
-	}
-	
-	
-
 }
 
 

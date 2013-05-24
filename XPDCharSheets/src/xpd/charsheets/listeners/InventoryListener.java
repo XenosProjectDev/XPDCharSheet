@@ -5,9 +5,9 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryCloseEvent;
+import org.bukkit.event.inventory.InventoryEvent;
 
 import xpd.charsheets.CharSheets;
-import xpd.charsheets.characters.Sheet;
 
 public class InventoryListener implements Listener{
 	
@@ -20,11 +20,10 @@ public class InventoryListener implements Listener{
 		}
 		
 		@EventHandler(priority=EventPriority.LOWEST)
-		public void onClose(InventoryCloseEvent event){
+		public void onClose(InventoryEvent event){
 			
-			Sheet.buildSheet();
-			
-			
+			if (event instanceof InventoryCloseEvent){
+				
+			}
 		}
-}
-		
+}		
