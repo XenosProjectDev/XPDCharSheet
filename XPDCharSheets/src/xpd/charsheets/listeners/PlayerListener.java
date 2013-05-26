@@ -27,12 +27,9 @@ public class PlayerListener implements Listener {
 		Player player = event.getPlayer();
 		
 		if (event instanceof PlayerJoinEvent){
-			if (!((Sheet) player).hasSheet()){
-				Sheet.buildSheet(player);
-			}
 			
+				Sheet.buildSheet(player);
+				
 		}
-		
 	}
-	
 }

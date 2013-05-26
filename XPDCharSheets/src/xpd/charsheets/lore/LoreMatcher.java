@@ -1,15 +1,11 @@
 package xpd.charsheets.lore;
 
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-//TODO GETS STRINGS - MATCH PATTERNS - RETURN VALUES
-
 public class LoreMatcher {
-	
+		
 	private Pattern healthP;
 	private Pattern regenP;
 	private Pattern hungerP;
@@ -46,17 +42,17 @@ public class LoreMatcher {
 	private Pattern bindEquipP;
 	private Pattern valueP;
 	
-	public Map attributes = new HashMap();
-	
-	public LoreMatcher(){
+	public HashMap loreMatcher(String lore){
 		
-		healthP = Pattern.compile("[+](\\d+)( Health)");
-		regenP = Pattern.compile("[+](\\d+)( Regen)");
-		hungerP = Pattern.compile("[+](\\d+)( Saturation)");
-		attackSpeedP = Pattern.compile("(\\d+)( Speed)");
-		hasteP = Pattern.compile("[+](\\d+)[%]( Haste)");
-		accuracyP = Pattern.compile("[+](\\d+)( Accuracy)");
-		critChanceP = Pattern.compile("[+](\\d+)[%]( Crit Chance)");
+		HashMap attributes = new HashMap();
+		
+		healthP = Pattern.compile("[+](\\d+)( Health)"); // +XX Health
+		regenP = Pattern.compile("[+](\\d+)( Regen)"); // +XX Regen
+		hungerP = Pattern.compile("[+](\\d+)( Saturation)"); // +XX Saturation
+		attackSpeedP = Pattern.compile("(Speed: )(\\d+)"); // Speed: XX
+		hasteP = Pattern.compile("[+](\\d+)[%]( Haste)"); // +XX% Haste
+		accuracyP = Pattern.compile("[+](\\d+)( Accuracy)"); // +XX Accuracy
+		critChanceP = Pattern.compile("[+](\\d+)[%]( Crit Chance)"); // +XX% CritChance
 		critDamageP = Pattern.compile("[+](\\d+)( Crit Damage)");
 		damageRangeP = Pattern.compile("(\\d+)(-)(\\d+)( Damage)");
 		damageBonusFlatP = Pattern.compile("[+](\\d+)( Damage)");
@@ -87,6 +83,43 @@ public class LoreMatcher {
 		valueP = Pattern.compile("(Value: )(\\d+)");
 		
 		
-
+		
+		Matcher healthM = healthP.matcher(lore);
+		Matcher regenM = regenP.matcher(lore);
+		Matcher hungerM = hungerP.matcher(lore);
+		Matcher attackSpeedM = attackSpeedP.matcher(lore);
+		Matcher hasteM = hasteP.matcher(lore);
+		Matcher accuracyM = accuracyP.matcher(lore);
+		Matcher critChanceM = critChanceP.matcher(lore);
+		Matcher critDamageM = critDamageP.matcher(lore);
+		Matcher damageRangeM = damageRangeP.matcher(lore);
+		Matcher damageBonusFlatM = damageBonusFlatP.matcher(lore);
+		Matcher damageBonusRangeM = damageBonusRangeP.matcher(lore);
+		Matcher armorPenetrationM = armorPenetrationP.matcher(lore);
+		Matcher lifestealM = lifestealP.matcher(lore);
+		Matcher deflectM = deflectP.matcher(lore);
+		Matcher parryM = parryP.matcher(lore);
+		Matcher dodgeM = dodgeP.matcher(lore);
+		Matcher blockChanceM = blockChanceP.matcher(lore);
+		Matcher blockValueM = blockValueP.matcher(lore);
+		Matcher resilienceM = resilienceP.matcher(lore);
+		Matcher armorM = armorP.matcher(lore);
+		Matcher resistanceFM = resistanceFP.matcher(lore);
+		Matcher resistancePM = resistancePP.matcher(lore);
+		Matcher resistanceLM = resistanceLP.matcher(lore);
+		Matcher resistanceEM = resistanceEP.matcher(lore);
+		Matcher moveSpeedM = moveSpeedP.matcher(lore);
+		Matcher slotM = slotP.matcher(lore);
+		Matcher durabilityM = durabilityP.matcher(lore);
+		Matcher weightM = weightP.matcher(lore);
+		Matcher restrictTypeM = restrictTypeP.matcher(lore);
+		Matcher restrictClassM = restrictClassP.matcher(lore);
+		Matcher restrictLevelM = restrictLevelP.matcher(lore);
+		//Matcher setBonusM = setBonusP.matcher(lore);
+		//Matcher bindUseM = bindUseP.matcher(lore);
+		//Matcher bindEquipM = bindEquipP.matcher(lore);
+		Matcher valueM = valueP.matcher(lore);
+		
+		return attributes;
 	}
 }
