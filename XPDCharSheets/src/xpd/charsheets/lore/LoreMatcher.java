@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import xpd.charsheets.character.attribute.Attribute;
+
 public class LoreMatcher {
 		
 	private Pattern healthP;
@@ -37,14 +39,15 @@ public class LoreMatcher {
 	private Pattern restrictTypeP;
 	private Pattern restrictClassP;
 	private Pattern restrictLevelP;
-	private Pattern setBonusP;
-	private Pattern bindUseP;
-	private Pattern bindEquipP;
-	private Pattern valueP;
+	//private Pattern setBonusP;
+	//private Pattern bindUseP;
+	//private Pattern bindEquipP;
+	private Pattern valueP; 
 	
-	public HashMap loreMatcher(String lore){
+	
+	public HashMap matchString(String lore){
 		
-		HashMap attributes = new HashMap();
+		HashMap attributes = new HashMap<String, Integer>();
 		
 		healthP = Pattern.compile("[+](\\d+)( Health)"); // +XX Health
 		regenP = Pattern.compile("[+](\\d+)( Regen)"); // +XX Regen
@@ -82,8 +85,7 @@ public class LoreMatcher {
 		//bindEquipP = Pattern.compile("[+](\\d+)( Health)");
 		valueP = Pattern.compile("(Value: )(\\d+)");
 		
-		
-		
+		/*
 		Matcher healthM = healthP.matcher(lore);
 		Matcher regenM = regenP.matcher(lore);
 		Matcher hungerM = hungerP.matcher(lore);
@@ -119,7 +121,22 @@ public class LoreMatcher {
 		//Matcher bindUseM = bindUseP.matcher(lore);
 		//Matcher bindEquipM = bindEquipP.matcher(lore);
 		Matcher valueM = valueP.matcher(lore);
+				
+		public static HashMap matchString(String allLore) {
+		
+		for (Attribute s : Character.getLore()){
+			attributes.put(s.getName(), s.getLevel());
+		}
+		for (int value : hashmap.values()){
+			
+		}
+		
+		for (String s : list) {
+			
+		}
+		*/
 		
 		return attributes;
 	}
 }
+

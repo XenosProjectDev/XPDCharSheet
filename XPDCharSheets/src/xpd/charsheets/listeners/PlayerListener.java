@@ -8,7 +8,7 @@ import org.bukkit.event.player.PlayerEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 
 import xpd.charsheets.CharSheets;
-import xpd.charsheets.character.Sheet;
+import xpd.charsheets.character.sheet.Sheet;
 
 public class PlayerListener implements Listener {
 

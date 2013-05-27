@@ -1,4 +1,4 @@
-package xpd.charsheets.character;
+package xpd.charsheets.character.sheet;
 
 public class SheetSave {
 	
