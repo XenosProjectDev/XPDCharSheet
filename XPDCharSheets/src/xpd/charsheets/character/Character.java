@@ -14,7 +14,6 @@ public final class Character{
 	protected final LivingEntity entity = null;
 	
 	protected final HashMap<String, Attribute> attributes = new HashMap();
-	protected final HashSet<Effect> effects = new HashSet();
 	
 	protected final String pname = "";
 	

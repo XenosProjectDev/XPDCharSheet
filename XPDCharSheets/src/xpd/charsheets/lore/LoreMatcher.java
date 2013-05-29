@@ -1,6 +1,7 @@
 package xpd.charsheets.lore;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -49,6 +50,9 @@ public class LoreMatcher {
 		
 		HashMap attributes = new HashMap<String, Integer>();
 		
+		Integer chance = Integer.valueOf(0);
+		Integer value = Integer.valueOf(0);
+		
 		healthP = Pattern.compile("[+](\\d+)( Health)"); // +XX Health
 		regenP = Pattern.compile("[+](\\d+)( Regen)"); // +XX Regen
 		hungerP = Pattern.compile("[+](\\d+)( Saturation)"); // +XX Saturation
@@ -84,6 +88,7 @@ public class LoreMatcher {
 		//bindUseP = Pattern.compile("[+](\\d+)( Health)");
 		//bindEquipP = Pattern.compile("[+](\\d+)( Health)");
 		valueP = Pattern.compile("(Value: )(\\d+)");
+		
 		
 		/*
 		Matcher healthM = healthP.matcher(lore);

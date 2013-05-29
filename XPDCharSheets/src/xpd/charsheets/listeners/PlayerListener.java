@@ -14,7 +14,9 @@ public class PlayerListener implements Listener {
 	public final CharSheets plugin;
 	
 	public PlayerListener(CharSheets a){
+		
 		this.plugin = a;
+		
 	}
 
 	@EventHandler(priority=EventPriority.LOWEST)

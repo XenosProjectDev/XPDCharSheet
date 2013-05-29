@@ -10,13 +10,11 @@ import xpd.charsheets.character.attribute.Attribute;
 
 public class Sheet {
 	
-	private Player player = null;
-	private Entity entity = null;
+	private Player player;
+	private Entity entity;
 	
 	protected HashMap attributes = new HashMap<String, Integer>();
 	protected HashMap sheets = new HashMap<String, Attribute>();
-	
-	
 
 	public static void buildSheet(Entity entity){
 		
@@ -24,9 +22,10 @@ public class Sheet {
 		if (entity instanceof Player){
 		
 			Player player = (Player)entity;
-			
+						
 			String armorLore = LoreGrab.getFromArmor(player);
-			String handLore = LoreGrab.getFromHand(player);			
+			String handLore = LoreGrab.getFromHand(player);
+			
 			
 			
 		}
