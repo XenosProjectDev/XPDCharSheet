@@ -1,0 +1,7 @@
+ name: XPDCharSheets
+ version: 1.0.0
+ description: XPDCharSheets
+ author: Xenos
+ authors: [SheerAwesomeness, QwisoDev]
+  
+ main: xpd.charsheets.CharSheets

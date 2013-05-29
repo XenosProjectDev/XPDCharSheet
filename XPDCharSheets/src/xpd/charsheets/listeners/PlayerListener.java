@@ -12,15 +12,6 @@ import xpd.charsheets.character.sheet.Sheet;
 
 public class PlayerListener implements Listener {
 
-	private CharSheets plugin;
-
-	public PlayerListener(CharSheets a){
-		
-		this.plugin = a;
-		
-		}
-	
-	
 	@EventHandler(priority=EventPriority.LOWEST)
 	public void playerEvents(PlayerEvent event){
 		
@@ -29,7 +20,6 @@ public class PlayerListener implements Listener {
 		if (event instanceof PlayerJoinEvent){
 			
 				Sheet.buildSheet(player);
-				
 		}
 	}
 }
