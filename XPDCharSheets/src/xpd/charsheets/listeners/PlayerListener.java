@@ -4,7 +4,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 
 import xpd.charsheets.CharSheets;
@@ -19,13 +18,14 @@ public class PlayerListener implements Listener {
 	}
 
 	@EventHandler(priority=EventPriority.LOWEST)
-	public void playerEvents(PlayerEvent event){
+	public void playerEvents(PlayerJoinEvent event){
 		
 		Player player = event.getPlayer();
 		
 		if (event instanceof PlayerJoinEvent){
 			
 				Sheet.buildSheet(player);
+				
 		}
 	}
 }
