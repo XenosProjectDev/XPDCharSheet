@@ -11,6 +11,12 @@ import xpd.charsheets.CharSheets;
 import xpd.charsheets.character.sheet.Sheet;
 
 public class PlayerListener implements Listener {
+	
+	public final CharSheets plugin;
+	
+	public PlayerListener(CharSheets a){
+		this.plugin = a;
+	}
 
 	@EventHandler(priority=EventPriority.LOWEST)
 	public void playerEvents(PlayerEvent event){

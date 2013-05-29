@@ -6,7 +6,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import xpd.charsheets.listeners.PlayerListener;
 
 public class CharSheets extends JavaPlugin {
-	
+		
 	public void onEnable() {
 		
 		registerListeners();
@@ -15,7 +15,7 @@ public class CharSheets extends JavaPlugin {
 		
 	private void registerListeners(){
 			
-		Bukkit.getServer().getPluginManager().registerEvents(new PlayerListener(), this);
+		Bukkit.getPluginManager().registerEvents(new PlayerListener(this), this);
 			
 	}
 }
